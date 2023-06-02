@@ -25,3 +25,26 @@ Route::middleware('auth:sanctum')->group(function () {
     // Route pour la déconnexion (logout)
     Route::post('/logout', 'App\Http\Controllers\AuthController@logout');
 });
+
+
+//---------------------------------- ADMINISTRATEUR ACCESS ----------------------------------//
+Route::middleware(['auth:sanctum','role:administrateur'])->name('administrateur.')->prefix("/administrateur")->group(
+    function(){
+        //
+    }
+);
+
+
+//---------------------------------- COACH ACCESS ----------------------------------//
+Route::middleware(['auth:sanctum','role:coach'])->name('coach.')->prefix("/coach")->group(
+    function(){  
+        //      
+    }
+);
+
+//---------------------------------- CHALLENGER ACCESS ----------------------------------//
+Route::middleware(['auth:sanctum','role:challenger'])->name('challenger.')->prefix("/challenger")->group(
+    function(){
+        //
+    }
+);

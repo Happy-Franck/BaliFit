@@ -17,6 +17,8 @@ $git push -u origin main
 
 $php artisan migrate
 
+$php artisan storage:link
+
 //SANCTUM
 $composer require laravel/sanctum
 $php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
